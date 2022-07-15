@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from './components/Navbar';
+import Home from './components/Home';
+import Explore from './components/Explore';
+import Discover from './components/Discover';
+import Why from './components/Why';
+import BestStores from './components/BestStores';
+import WhatOurClientsSay from './components/WhatOurClientsSay';
+import Subscribe from './components/Subscribe';
+import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="w-full">
+      <Navbar />
+      <Home />
+      <Explore />
+      <Discover />
+      <Why />
+      <BestStores />
+      <WhatOurClientsSay />
+      <Subscribe />
+      <Footer />
     </div>
   );
 }

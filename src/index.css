@@ -1,13 +1,114 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+    @font-face {
+    font-family: "Environment";
+    src: url("../../../../../Downloads/Environment/Environment\ Bold.ttf")
+  }
+    @font-face {
+        font-family: "Metropolis Font Family";
+        src: url("../../../../../Downloads/Metropolis/Metropolis-Regular.otf")
+    }
+  body {
+    font-family: "Environment";
+  }
+  .font-env {
+    font-family: "Environment";
+  }
+  .font-metro {
+    font-family: "Metropolis Font Family";
+  }
+  .btn {
+    @apply bg-[#FB5306] font-metro text-white font-semibold
+    hover:text-[#FFD0BB] rounded-lg py-2 px-8 w-full sm:w-fit;
+  }
+  .btn-2 {
+    @apply bg-[#FB5306] font-metro text-white font-semibold
+    hover:text-[#FFD0BB] rounded-lg py-2 px-12 lg:px-8 w-fit;
+  }
+  .suscribe-input {
+    @apply bg-transparent border text-[#202020] font-semibold placeholder-inherit
+    border-[#202020] py-2 px-4 w-full md:max-w-[40%] md:mr-4
+     focus:outline-none focus:border-[#fb5306];
+  }
+.bg-ham {
+    @apply bg-slate-900;
+}
+.ham-open {
+    @apply  block hamburger lg:hidden focus:outline-none cursor-pointer open;
+  }
+  .ham-close {
+    @apply  block hamburger lg:hidden focus:outline-none cursor-pointer;
+  }
+.trans {
+    @apply transition-all duration-300 ease-in-out;
+}
+.hide-scrollbar{
+    scroll-margin-top: 1rem;
+    scrollbar-width: none;
+    scrollbar-track-color: blanchedalmond;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Hamburger Menu */
+.ham {
+    display: block;
+    position: absolute;
+    top: 8px;
+    right: 0;
+    transform: translate(-100%, 60%);
+    font-size: 2rem;
+    cursor: pointer;
+}
+.hamburger {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    transition: all 0.25s ease;
+    position: relative;
+}
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 24px;
+    transform: rotate(0);
+    transition: all 0.5s;
+}
+.hamburger-middle {
+    width: 20px;
+}
+.hamburger-middle {
+    transform: translateY(7px);
+}
+.hamburger-bottom {
+    transform: translateY(14px);
+}
+.open {
+    transform: rotate(90deg);
+    transform: translateY(0px);
+}
+.open .hamburger-top {
+    transform: rotate(45deg) translateY(6px) translate(6px);
+}
+.open .hamburger-middle {
+    display: none;
+}
+.open .hamburger-bottom {
+    transform: rotate(-45deg) translateY(6px) translate(-6px);
+}
+.aside {
+    animation: showMenu 500ms ease forwards;
+}
+/* Animation */
+@keyframes showMenu {
+    from {
+        left: -100%;
+    }
+    to {
+        left: 0;
+    }
 }
